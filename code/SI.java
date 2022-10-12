@@ -1,4 +1,4 @@
-package github_GFNL_0411_sensorStraChange_bigScale;
+package github_Anonymous_GRSL;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -104,7 +104,7 @@ public class SI {
 			 }
 			bufferedReader.close();
 		} catch (IOException e) {
-			System.out.println("¶ÁÎÄ¼şµÄÊ±ºò³öÏÖÎÊÌâ...");
+			System.out.println("è¯»æ–‡ä»¶çš„æ—¶å€™å‡ºç°é—®é¢˜...");
 			e.printStackTrace();
 		}
 		
@@ -131,7 +131,7 @@ public class SI {
 			    }
 			    fileInputStream.close();
 			} catch (IOException e) {
-				System.out.println("¶ÁÎÄ¼şµÄÊ±ºò³öÏÖÎÊÌâ...");
+				System.out.println("è¯»æ–‡ä»¶çš„æ—¶å€™å‡ºç°é—®é¢˜...");
 				e.printStackTrace();
 			}
 			index++;
@@ -225,7 +225,7 @@ public class SI {
 								if(network.vertexArray[Integer.parseInt(neighborVertex.verName)-1].degree!=1) {
 									receptiveOrderSet.remove((Integer)(head.distance+1));
 									myFONC_obvs.add(neighborVertex.verName);
-									System.out.println((head.distance+1)+"±»³ıÈ¥........");
+									System.out.println((head.distance+1)+"è¢«é™¤å»........");
 								}
 								
 							}
@@ -278,7 +278,7 @@ public class SI {
 								infected_people.add(r + "");
 
 				source = r;
-				System.out.println("´«È¾Ô´: " + r);
+				System.out.println("ä¼ æŸ“æº: " + r);
 				node.infe = true;
 				node.time = 0;
 
@@ -327,7 +327,7 @@ public class SI {
 			Queue<vertex_dij_string> queue = new LinkedList<vertex_dij_string>();
 			HashSet<String> obvs_remove_DFS=new HashSet<String>();
 			if(All_FONC_obvs.size()==0) {
-				System.out.println("¸ĞÊÜÒ°Ì°À·¸²¸Ç");
+				System.out.println("æ„Ÿå—é‡è´ªå©ªè¦†ç›–");
 				for (Point P : mySort_degree.arr) {
 					if(!myFONC_obvs.contains(P.verName_typeINT+""))
 						All_FONC_obvs.add(P.verName_typeINT+"");
@@ -385,7 +385,7 @@ public class SI {
 								if(network.vertexArray[Integer.parseInt(neighborVertex.verName)-1].degree!=1) {
 									receptiveOrderSet.remove((Integer)(head.distance+1));
 									myFONC_obvs.add(neighborVertex.verName);
-									System.out.println((head.distance+1)+"±»³ıÈ¥........");
+									System.out.println((head.distance+1)+"è¢«é™¤å»........");
 								}
 								
 							}
@@ -441,7 +441,7 @@ public class SI {
 								infected_people.add(r + "");
 
 				source = r;
-				System.out.println("´«È¾Ô´: " + r);
+				System.out.println("ä¼ æŸ“æº: " + r);
 				node.infe = true;
 				node.time = 0;
 
@@ -495,7 +495,7 @@ public class SI {
 								infected_people.add(r + "");
 
 				source = r;
-				System.out.println("´«È¾Ô´: " + r);
+				System.out.println("ä¼ æŸ“æº: " + r);
 				node.infe = true;
 				node.time = 0;
 
@@ -624,10 +624,10 @@ public class SI {
 					sort.arr[index].Au = yitaArraysort.arr[index].Au;
 				}
 				Arrays.sort(sort.arr, new MyComprator());
-				System.out.println("------------DFSÄÚ---------------");
+				System.out.println("------------DFSå†…---------------");
 				for (int i = 0; i < 5; i++) { 					System.out.println("(" + sort.arr[sort.arr.length-1-i].verName_typeINT + "," + sort.arr[sort.arr.length-1-i].Au + ")");
 				}
-				System.out.println("------------DFSÄÚ---------------");
+				System.out.println("------------DFSå†…---------------");
 
 				for(int max_num_inDFS=1;max_num_inDFS<=network.verNum;max_num_inDFS++){
 					if(obvsArrayList.contains(sort.arr[network.verNum - max_num_inDFS].verName_typeINT+"")){
@@ -656,7 +656,7 @@ public class SI {
 					}
 
 		observer_num=obvsArrayList.size();
-		System.out.println("ËùÓĞµÄFONC±ØÒª¹Û²ìµã: "+obvsArrayList.toString());
+		System.out.println("æ‰€æœ‰çš„FONCå¿…è¦è§‚å¯Ÿç‚¹: "+obvsArrayList.toString());
 		System.exit(0);
 		
 		
@@ -753,10 +753,10 @@ public class SI {
 					sort.arr[index].Au = yitaArraysort.arr[index].Au;
 				}
 				Arrays.sort(sort.arr, new MyComprator());
-				System.out.println("------------DFSÄÚ---------------");
+				System.out.println("------------DFSå†…---------------");
 				for (int i = 0; i < 5; i++) { 					System.out.println("(" + sort.arr[sort.arr.length-1-i].verName_typeINT + "," + sort.arr[sort.arr.length-1-i].Au + ")");
 				}
-				System.out.println("------------DFSÄÚ---------------");
+				System.out.println("------------DFSå†…---------------");
 
 				for(int max_num_inDFS=1;max_num_inDFS<=network.verNum;max_num_inDFS++){
 					if(obvsArrayList.contains(sort.arr[network.verNum - max_num_inDFS].verName_typeINT+"")){
@@ -782,7 +782,7 @@ public class SI {
 			}
 
 						observer_num=obvsArrayList.size();
-			System.out.println("ËùÓĞµÄFONC±ØÒª¹Û²ìµã: "+obvsArrayList.toString());
+			System.out.println("æ‰€æœ‰çš„FONCå¿…è¦è§‚å¯Ÿç‚¹: "+obvsArrayList.toString());
 			System.exit(0);
 			
 					}
@@ -812,7 +812,7 @@ public class SI {
 				String infed_name = temp.get(j-1);
 								Vertex1 infed_person = network.vertexArray[Integer.parseInt(infed_name)-1];
 				if (infed_person == null) {
-					System.out.println("²»´æÔÚ¸ÃĞÕÃû!");
+					System.out.println("ä¸å­˜åœ¨è¯¥å§“å!");
 					return;
 				}
 				Vertex1 maybe_person = infed_person.nextNode;
@@ -873,7 +873,7 @@ public class SI {
 			}
 
 						if(recovery_rate==100){
-				System.out.println("ÊÇSIRÄ£ĞÍ...\n");
+				System.out.println("æ˜¯SIRæ¨¡å‹...\n");
 				System.exit(0);				Iterator<String> itor=infected_people.iterator();
 				while(itor.hasNext()){
 					String infected_person=itor.next();
@@ -888,8 +888,8 @@ public class SI {
 
 		}
 		System.out.println("----------------------------------");
-		System.out.println("´«²¥½áÊøºó£¬´«È¾ĞÅÏ¢:");
-		System.out.println("¸ĞÈ¾ÈËÊı:"+infe_nums);
+		System.out.println("ä¼ æ’­ç»“æŸåï¼Œä¼ æŸ“ä¿¡æ¯:");
+		System.out.println("æ„ŸæŸ“äººæ•°:"+infe_nums);
 
 
 
@@ -921,12 +921,12 @@ public class SI {
 				break;
 			}
 		}
-				System.out.println("Êµ¼ÊÔÚËã·¨ÖĞÓÃµ½µÄ¹Û²ìµãÊıÁ¿: "+obvSet.size());
+				System.out.println("å®é™…åœ¨ç®—æ³•ä¸­ç”¨åˆ°çš„è§‚å¯Ÿç‚¹æ•°é‡: "+obvSet.size());
 		return obvSet;
 	}
 
 	/**
-	 * Õâ¸ö·½·¨ÊÇgetJordonCenter_dividedWeightµÄ×Ó·½·¨£¬ÓÃÓÚ¿ìËÙÇó½âJordanÖµ
+	 * è¿™ä¸ªæ–¹æ³•æ˜¯getJordonCenter_dividedWeightçš„å­æ–¹æ³•ï¼Œç”¨äºå¿«é€Ÿæ±‚è§£Jordanå€¼
 	 */
 	public static double JordanValue_by_Dijstra(int[][] path, String source, ArrayList<String> obv_set) {
 		double JordanValue=0;
@@ -953,7 +953,7 @@ public class SI {
 
 	
 	/**
-	 * Õâ¸ö·½·¨ÓÅ»¯ÁËÃ¿¸öµã¶ÔÓÚ¹Û²ìµã¾àÀëºÍÊ±¼äµÄ²ÎÊı£¬Í¨¹ı Ê±¼ä/¾àÀë ±£Ö¤ÁË¹Û²ìµãºÍ´«È¾Ô´Î»ÖÃµÄ×¼È·ĞÔ£¬ÓÉÓÚ¸Ã·½·¨ĞèÒªÊ¹ÓÃ¾àÀëÕâ¸ö²ÎÊı£¬Òò´ËĞèÒªALG.shortPath¾ØÕó
+	 * è¿™ä¸ªæ–¹æ³•ä¼˜åŒ–äº†æ¯ä¸ªç‚¹å¯¹äºè§‚å¯Ÿç‚¹è·ç¦»å’Œæ—¶é—´çš„å‚æ•°ï¼Œé€šè¿‡ æ—¶é—´/è·ç¦» ä¿è¯äº†è§‚å¯Ÿç‚¹å’Œä¼ æŸ“æºä½ç½®çš„å‡†ç¡®æ€§ï¼Œç”±äºè¯¥æ–¹æ³•éœ€è¦ä½¿ç”¨è·ç¦»è¿™ä¸ªå‚æ•°ï¼Œå› æ­¤éœ€è¦ALG.shortPathçŸ©é˜µ
 	 * @param network
 	 * @param usedObvs_set
 	 * @param n

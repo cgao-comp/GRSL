@@ -17,7 +17,7 @@ public class MyExecute {
 	public static int max_obv_num=30;
 	public static int add_obv_num=5;
 
-	//当fetch_num被感染，即可以开始溯源，即GFNL算法用到的对应sensor数量的传播信息
+	//当fetch_num被感染，即可以开始溯源，即GRSL算法用到的对应sensor数量的传播信息
 	public static int fetch_num=4;
 	
 	//传染率
@@ -28,8 +28,8 @@ public class MyExecute {
 	//JordanCenter数量
 	//观察点数量和增量
 	
-	//仿真GFNL算法需要的时间
-	static double GFNL_time1;
+	//仿真GRSL算法需要的时间
+	static double GRSL_time1;
 	static double total_time;
 	
 	static double time_myStartEXE4;
@@ -63,7 +63,7 @@ public class MyExecute {
 					System.out.println("总观察点比例: " + allObvNum_rate + " 选择数量: " + setNum);
 					double f_score=0;
 					total_time=0;
-					GFNL_time1=0;
+					GRSL_time1=0;
 					time_myStartEXE4=0;					
 					time_randEXE30=0;
 					time_myStartEXE30=0;
@@ -103,7 +103,7 @@ public class MyExecute {
 						System.out.println("传播模型仿真完成......");
 						// mySi.JordanSimulate(network,true);//这个需要注意:
 						// 1、getobv_byTime的第二个参数必须要设置为和网络节点一样大，第三个参数的实际意义就是感染规模，这个模型下是没有观察点的
-						GFNL_time1=System.currentTimeMillis();
+						GRSL_time1=System.currentTimeMillis();
 
 						// 抽取前30%的被感染观察点
 						//.1 fetch按比例抽取
@@ -158,7 +158,7 @@ public class MyExecute {
 							}
 						}
 						
-						total_time=total_time+(System.currentTimeMillis()-GFNL_time1);
+						total_time=total_time+(System.currentTimeMillis()-GRSL_time1);
 
 
 					}

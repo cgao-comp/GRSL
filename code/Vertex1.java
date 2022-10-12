@@ -1,4 +1,4 @@
-package github_GFNL_0411_sensorStraChange_bigScale;
+package github_Anonymous_GRSL;
 
 import java.util.HashSet;
 
@@ -6,10 +6,10 @@ public class Vertex1 {
 	public String origin=null;
 	public boolean not_get_award=true;
 	
-	public String verName;//½ÚµãÃû³Æ
-	public double time;//±»¸ĞÈ¾µÄÕæÊµÊ±¼ä
-	public double time_by_predictSource;//ÔÚÔ¤²âµÄÔ´µãÏÂ±»¸ĞÈ¾µÄÊ±¼ä
-	public boolean infe;//¸Ã½Úµã×´Ì¬
+	public String verName;//èŠ‚ç‚¹åç§°
+	public double time;//è¢«æ„ŸæŸ“çš„çœŸå®æ—¶é—´
+	public double time_by_predictSource;//åœ¨é¢„æµ‹çš„æºç‚¹ä¸‹è¢«æ„ŸæŸ“çš„æ—¶é—´
+	public boolean infe;//è¯¥èŠ‚ç‚¹çŠ¶æ€
 	public Vertex1 nextNode;
 	public boolean recover=false;
 	public int degree=0;
@@ -17,15 +17,15 @@ public class Vertex1 {
 	public boolean isObserver=false;
 	public boolean isRandomObserver=false;
 
-	public int index;//Õâ¸öÊôĞÔÊôÓÚEPAËã·¨£¬ÓÃÓÚÈ·¶¨¸ÃµãÔÚ¸ĞÈ¾¾ØÕóµÄµÚ¼¸ĞĞ
+	public int index;//è¿™ä¸ªå±æ€§å±äºEPAç®—æ³•ï¼Œç”¨äºç¡®å®šè¯¥ç‚¹åœ¨æ„ŸæŸ“çŸ©é˜µçš„ç¬¬å‡ è¡Œ
 
-	public double infected_p; //ÈÃÃ¿¸ö½ÚµãµÄ´«²¥ÂÊ²»Í¬£¬Òì¹¹ÍøÂç×¨ÓÃ²ÎÊı*ÇÒºÜÖØÒª
+	public double infected_p; //è®©æ¯ä¸ªèŠ‚ç‚¹çš„ä¼ æ’­ç‡ä¸åŒï¼Œå¼‚æ„ç½‘ç»œä¸“ç”¨å‚æ•°*ä¸”å¾ˆé‡è¦
 
 	public HashSet<Pair> ID_Label=new HashSet<Pair>();
 	//public int t_sum=0;
 	public String state;
 
-	boolean isVisit=false;//Õâ¸ö²ÎÊıÊÇÎªÁËÕÒ×ã¹»¶àµÄ¶ÈÎª1µÄ¹Û²âÔ´Ñ­»·ÍË³öµÄ£¬Ïê¼ûinitNet_heterogeneous_combinedFONCº¯Êı
+	boolean isVisit=false;//è¿™ä¸ªå‚æ•°æ˜¯ä¸ºäº†æ‰¾è¶³å¤Ÿå¤šçš„åº¦ä¸º1çš„è§‚æµ‹æºå¾ªç¯é€€å‡ºçš„ï¼Œè¯¦è§initNet_heterogeneous_combinedFONCå‡½æ•°
 }
 
 class Pair {

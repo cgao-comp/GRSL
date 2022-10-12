@@ -1,4 +1,4 @@
-package github_GFNL_0411_sensorStraChange_bigScale;
+package github_Anonymous_GRSL;
 
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -31,18 +31,18 @@ public class ALG {
 		 Queue<vertex_dij> queue = new LinkedList<vertex_dij>();
 		 Set<String> exist=new HashSet<String>();
 		 exist.add(verName_int+"");
-		//³õÊ¼»¯Îª-1
+		//åˆå§‹åŒ–ä¸º-1
 		for(int i=0;i<network.verNum;i++) {
 			shortDis_of_verNum[i]=-1;
 		}
 		shortDis_of_verNum[verName_int-1]=0;
 		
 		int dis=1;
-		//Ñ¡ÖĞ¸ù½Úµã
+		//é€‰ä¸­æ ¹èŠ‚ç‚¹
 		Vertex1 root=network.vertexArray[verName_int-1];
 		Vertex1 current=root.nextNode;
 		while(current!=null){
-			//¸ù½ÚµãµÄËùÓĞÁÚ¾ÓDFS
+			//æ ¹èŠ‚ç‚¹çš„æ‰€æœ‰é‚»å±…DFS
 			queue.offer(new vertex_dij(Integer.parseInt(current.verName), dis));
 			exist.add(current.verName);
 			current=current.nextNode;
@@ -53,7 +53,7 @@ public class ALG {
 			shortDis_of_verNum[now.verName_int-1]=now.distance;
 			//System.out.println("verName: "+now.verName_int+"  distance: "+now.distance);
 			
-			//½«Ä¿Ç°½ÚµãµÄÁÚ¾Ó¼ÓÈë£¬Èç¹ûÒÑ¾­ÔÚexist¼¯ºÏÖĞÁË£¬ËµÃ÷ÓĞ¸ü¶ÌµÄÂ·¾¶£¬Ö»ÊÇ»¹Ã»À´µÃ¼°½øĞĞ±éÀú
+			//å°†ç›®å‰èŠ‚ç‚¹çš„é‚»å±…åŠ å…¥ï¼Œå¦‚æœå·²ç»åœ¨existé›†åˆä¸­äº†ï¼Œè¯´æ˜æœ‰æ›´çŸ­çš„è·¯å¾„ï¼Œåªæ˜¯è¿˜æ²¡æ¥å¾—åŠè¿›è¡Œéå†
 			Vertex1 now_vertex=network.vertexArray[now.verName_int-1];
 			while(now_vertex.nextNode!=null) {
 				now_vertex=now_vertex.nextNode;
@@ -69,10 +69,10 @@ public class ALG {
 	}
 
 	public static void main(String[] args) throws Exception {
-		//1¡¢ÈçĞèÊ¹ÓÃĞÂµÄÊı¾İ¼¯Éú³É×î¶Ì¾àÀë¾ØÕó£¬ÔËĞĞÒ»´ÎÒÔÏÂ´úÂë¼´¿É
+		//1ã€å¦‚éœ€ä½¿ç”¨æ–°çš„æ•°æ®é›†ç”Ÿæˆæœ€çŸ­è·ç¦»çŸ©é˜µï¼Œè¿è¡Œä¸€æ¬¡ä»¥ä¸‹ä»£ç å³å¯
 //		Graph1 topological_graph=new Graph1();
 //		CreateGraph3.initialGraph(topological_graph);
-//		System.out.println("ÍøÂç³õÊ¼»¯Íê³É");
+//		System.out.println("ç½‘ç»œåˆå§‹åŒ–å®Œæˆ");
 //		int[][] short_path=new int[topological_graph.verNum][topological_graph.verNum];	
 //		for(int verNum=1;verNum<=topological_graph.verNum;verNum++) {
 //			short_path[verNum-1]=adjGraph_ShortPath(topological_graph,verNum);
@@ -81,25 +81,25 @@ public class ALG {
 //		Write.writeTwoDimension("/Users/houdongpeng/1/ComplexNetwork/src/quick_J_0117/github_shortestPath.txt", short_path);		
 //		System.exit(0);
 		
-		// 2¡¢ÈçĞèÊ¹ÓÃĞÂµÄÊı¾İ¼¯Éú³É²¿ÊğµÄ¹Û²âµã£¬Ôò:
-		//    1) ÔËĞĞÒÔÏÂ±»×¢ÊÍº¯Êı;
-		//    2) ÔÚinitNet_heterogeneous_combinedFONC_divideWeight()º¯ÊıÖĞÊ¹ÓÃ È«¸²¸Ç°æ±¾initNet_SIR_greedy_FullOrder() »ò ×ÔÑ¡±ÈÀı°æ±¾initNet_SIR_greedy_ratio()
+		// 2ã€å¦‚éœ€ä½¿ç”¨æ–°çš„æ•°æ®é›†ç”Ÿæˆéƒ¨ç½²çš„è§‚æµ‹ç‚¹ï¼Œåˆ™:
+		//    1) è¿è¡Œä»¥ä¸‹è¢«æ³¨é‡Šå‡½æ•°;
+		//    2) åœ¨initNet_heterogeneous_combinedFONC_divideWeight()å‡½æ•°ä¸­ä½¿ç”¨ å…¨è¦†ç›–ç‰ˆæœ¬initNet_SIR_greedy_FullOrder() æˆ– è‡ªé€‰æ¯”ä¾‹ç‰ˆæœ¬initNet_SIR_greedy_ratio()
 //		ALG.shortPath= Read.readFromShortPathFile("/Users/houdongpeng/1/ComplexNetwork/src/quick_J_0117/github_shortestPath.txt"
 //                , 37700);
-//		System.out.println("shortPathÒÑ³õÊ¼»¯Íê³É...");
+//		System.out.println("shortPathå·²åˆå§‹åŒ–å®Œæˆ...");
 	
 		
 		ALG.isBigScaleNet=false;
 		if(ALG.isBigScaleNet) {
 			//None
 		}else {
-			//²»ÊÇ´óĞÍÍøÂç¿ÉÒÔ¶ÁÈëµ½ÄÚ´æÖĞ£¬¼ÓËÙÔËĞĞĞ§ÂÊ
+			//ä¸æ˜¯å¤§å‹ç½‘ç»œå¯ä»¥è¯»å…¥åˆ°å†…å­˜ä¸­ï¼ŒåŠ é€Ÿè¿è¡Œæ•ˆç‡
 			ALG.shortPath= Read.readFromShortPathFile("G:\\Data Files\\shortPath_large.txt", 37700);
-			System.out.println("ÄÚ´æÖĞµÄshortPath³õÊ¼»¯Íê³É.....");
+			System.out.println("å†…å­˜ä¸­çš„shortPathåˆå§‹åŒ–å®Œæˆ.....");
 			//System.out.println("shortPath.length: "+shortPath.length +"----shortPath[1].length: "+shortPath[1].length);
 		}
 		
-		//ÓĞÁË¹Û²ìµãÒÔºóÖ´ĞĞËİÔ´·½·¨µÄËã·¨
+		//æœ‰äº†è§‚å¯Ÿç‚¹ä»¥åæ‰§è¡Œæº¯æºæ–¹æ³•çš„ç®—æ³•
 		for(int i=-7;i<=-7;i++) {
 			MyExecute.initNet_heterogeneous_combinedFONC_divideWeight(i);
 		}

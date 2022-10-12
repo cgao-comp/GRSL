@@ -1,4 +1,4 @@
-package github_GFNL_0411_sensorStraChange_bigScale;
+package github_Anonymous_GRSL;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -9,26 +9,26 @@ public class MyExecute {
 
 	public static double time=200;
 	public static int center_Num=1;
-	public static double ppt_of_I=0.9; //¿ØÖÆµÄ¸ĞÈ¾¹æÄ££¬¿ÉÒÔ´ó£¬ÓÃÓÚ¾ö¶¨´«²¥½áÊøµÄÊ±¼ä
-	public static double ppt_of_I_sensor=0.1; //sensor¸ĞÈ¾¹æÄ££¬±íÕ÷¸ĞÈ¾¹æÄ£-------Õâ¸ö²ÅÊÇ´ú±íµÄÊÇ¸ĞÈ¾¹æÄ££¬ÉÏ±ßµÄÄÇ¸ö¿ÉÒÔºÜ´ó£¬Ä¿µÄÊÇ±£Ö¤³ÌĞòµÄÔËĞĞ±ß½ç
+	public static double ppt_of_I=0.9; //æ§åˆ¶çš„æ„ŸæŸ“è§„æ¨¡ï¼Œå¯ä»¥å¤§ï¼Œç”¨äºå†³å®šä¼ æ’­ç»“æŸçš„æ—¶é—´
+	public static double ppt_of_I_sensor=0.1; //sensoræ„ŸæŸ“è§„æ¨¡ï¼Œè¡¨å¾æ„ŸæŸ“è§„æ¨¡-------è¿™ä¸ªæ‰æ˜¯ä»£è¡¨çš„æ˜¯æ„ŸæŸ“è§„æ¨¡ï¼Œä¸Šè¾¹çš„é‚£ä¸ªå¯ä»¥å¾ˆå¤§ï¼Œç›®çš„æ˜¯ä¿è¯ç¨‹åºçš„è¿è¡Œè¾¹ç•Œ
 
-	//²¿ÊğµÄsensor±ÈÀı:
+	//éƒ¨ç½²çš„sensoræ¯”ä¾‹:
 	public static int min_obv_num=5;
 	public static int max_obv_num=30;
 	public static int add_obv_num=5;
 
-	//µ±fetch_num±»¸ĞÈ¾£¬¼´¿ÉÒÔ¿ªÊ¼ËİÔ´£¬¼´GFNLËã·¨ÓÃµ½µÄ¶ÔÓ¦sensorÊıÁ¿µÄ´«²¥ĞÅÏ¢
+	//å½“fetch_numè¢«æ„ŸæŸ“ï¼Œå³å¯ä»¥å¼€å§‹æº¯æºï¼Œå³GFNLç®—æ³•ç”¨åˆ°çš„å¯¹åº”sensoræ•°é‡çš„ä¼ æ’­ä¿¡æ¯
 	public static int fetch_num=4;
 	
-	//´«È¾ÂÊ
+	//ä¼ æŸ“ç‡
 	public static double min_infected_p=0.1;
 	public static double max_infected_p=0.91;
 	public static double add_infected_p=0.4;
 
-	//JordanCenterÊıÁ¿
-	//¹Û²ìµãÊıÁ¿ºÍÔöÁ¿
+	//JordanCenteræ•°é‡
+	//è§‚å¯Ÿç‚¹æ•°é‡å’Œå¢é‡
 	
-	//·ÂÕæGFNLËã·¨ĞèÒªµÄÊ±¼ä
+	//ä»¿çœŸGFNLç®—æ³•éœ€è¦çš„æ—¶é—´
 	static double GFNL_time1;
 	static double total_time;
 	
@@ -36,31 +36,31 @@ public class MyExecute {
 	static double time_randEXE30;
 	
 	
-	//×îĞÂ¼ÓÈëµÄÒ»ÌõÏß
+	//æœ€æ–°åŠ å…¥çš„ä¸€æ¡çº¿
 	static double time_myStartEXE30;
 
 	public static void initNet_heterogeneous_combinedFONC_divideWeight(int type) throws Exception {
-		// ÎÄ¼ş5
+		// æ–‡ä»¶5
 		//String path = "G:\\test"+type+".txt";
 
 		String path="G:\\eclipse workspace\\1\\ComplexNetwork\\src\\test_sensorstrategy1_large.txt";
-//		String path="G:\\eclipse workspace\\1\\ComplexNetwork\\src\\test_sensorstrategy2_large_onlydegree+random¡ªno degree1.txt";
-		//String path = "G:\\SI_propagation_model\\facebook_randomScale\\Â·¾¶ĞÅÏ¢\\((RAND)10%²¿Êğ±ÈÀı-10%¸ĞÈ¾(²»ĞŞ¸´×î¶ÌÂ·¾¶(¿ì)¡ª°üº¬Â·¾¶ĞÅÏ¢-F_score)final-1.05+wrong-greedy_FNOC+Ê±¾à±È-7)initNet_heterogeneous_combinedFONC_divideWeight_parasType"+type+".txt";
+//		String path="G:\\eclipse workspace\\1\\ComplexNetwork\\src\\test_sensorstrategy2_large_onlydegree+randomâ€”no degree1.txt";
+		//String path = "G:\\SI_propagation_model\\facebook_randomScale\\è·¯å¾„ä¿¡æ¯\\((RAND)10%éƒ¨ç½²æ¯”ä¾‹-10%æ„ŸæŸ“(ä¸ä¿®å¤æœ€çŸ­è·¯å¾„(å¿«)â€”åŒ…å«è·¯å¾„ä¿¡æ¯-F_score)final-1.05+wrong-greedy_FNOC+æ—¶è·æ¯”-7)initNet_heterogeneous_combinedFONC_divideWeight_parasType"+type+".txt";
 		// file = new File(path);
 		BufferedWriter writer = new BufferedWriter(new FileWriter(path));
-		writer.write("Ê¹ÓÃº¯ÊıinitNet_heterogeneous_combinedFONCÇÒ½áºÏÁËdivideWeight, Ëæ»ú´«È¾¹æÄ££¬Êä³öÎªµ¥¸öÔ¤²âÔ´µã: ");
+		writer.write("ä½¿ç”¨å‡½æ•°initNet_heterogeneous_combinedFONCä¸”ç»“åˆäº†divideWeight, éšæœºä¼ æŸ“è§„æ¨¡ï¼Œè¾“å‡ºä¸ºå•ä¸ªé¢„æµ‹æºç‚¹: ");
 		writer.write("\r\n");
 
 		for(double infected_p=min_infected_p;infected_p<=max_infected_p;infected_p=infected_p+add_infected_p) {
-			writer.write("¸ĞÈ¾ÂÊÊÇ"+infected_p+": ");
+			writer.write("æ„ŸæŸ“ç‡æ˜¯"+infected_p+": ");
 			writer.write("\r\n");
 
-			int allObvNum_rate = -1; //  ×Ô´ø°Ù·Ö±È   allObvNum_rate%
+			int allObvNum_rate = -1; //  è‡ªå¸¦ç™¾åˆ†æ¯”   allObvNum_rate%
 			int obv_num=-1;
 			int setNum = fetch_num;
 			//double setRate = 0;
 			for (allObvNum_rate = min_obv_num; allObvNum_rate <= max_obv_num; allObvNum_rate += add_obv_num) {
-					System.out.println("×Ü¹Û²ìµã±ÈÀı: " + allObvNum_rate + " Ñ¡ÔñÊıÁ¿: " + setNum);
+					System.out.println("æ€»è§‚å¯Ÿç‚¹æ¯”ä¾‹: " + allObvNum_rate + " é€‰æ‹©æ•°é‡: " + setNum);
 					double f_score=0;
 					total_time=0;
 					GFNL_time1=0;
@@ -71,7 +71,7 @@ public class MyExecute {
 					for (int time = 0; time < MyExecute.time; time++) {
 						Graph1 network = new Graph1();
 						CreateGraph3.initialGraph(network);
-						System.out.println("Í¼³õÊ¼»¯Íê³É......");
+						System.out.println("å›¾åˆå§‹åŒ–å®Œæˆ......");
 						
 						if(time==0) {
 							System.out.println(CreateGraph3.get_AVG_degree(network));
@@ -80,16 +80,16 @@ public class MyExecute {
 						}
 						
 						SI mySi = new SI();
-//IF(ĞÂµÄÊı¾İ¼¯ĞèÒªÉú³ÉÆô·¢ĞÅÏ¢)  ÔòÉú³ÉsensorµÄÁ½ÖÖÍ¾¾¶£º
+//IF(æ–°çš„æ•°æ®é›†éœ€è¦ç”Ÿæˆå¯å‘ä¿¡æ¯)  åˆ™ç”Ÿæˆsensorçš„ä¸¤ç§é€”å¾„ï¼š
 //						mySi.initNet_SIR_greedy_FullOrder(network, infected_p, 0, 1, 999999);
 //						mySi.initNet_SIR_greedy_ratio(network, infected_p, 0, 1, (int)(0.2*network.verNum));					
 //ELSE:
 						mySi.initNet_SIR_Greedy_fromFile(network, infected_p, 0, center_Num, 
 								"G:\\Data Files\\OBV_5-40\\large"+allObvNum_rate+".txt");
-						System.out.println("greedy sensor²¼ÖÃÍê³É......");
+						System.out.println("greedy sensorå¸ƒç½®å®Œæˆ......");
 						
 //						mySi.initNet_SIR_Greedy_lowComplexity(allObvNum_rate, network, infected_p, -2, center_Num, (int)((double)(allObvNum_rate)/100l * network.verNum),network.diameter);
-//						System.out.println("greedy2 sensor²¼ÖÃÍê³É......");
+//						System.out.println("greedy2 sensorå¸ƒç½®å®Œæˆ......");
 //						if(true) {
 //							break;
 //						}
@@ -99,45 +99,45 @@ public class MyExecute {
 						System.out.println("mySi.observer_num: " + mySi.observer_num);
 						obv_num=mySi.observer_num;
 
-						mySi.simulate(network, true, ppt_of_I);// È«¸ĞÈ¾
-						System.out.println("´«²¥Ä£ĞÍ·ÂÕæÍê³É......");
-						// mySi.JordanSimulate(network,true);//Õâ¸öĞèÒª×¢Òâ:
-						// 1¡¢getobv_byTimeµÄµÚ¶ş¸ö²ÎÊı±ØĞëÒªÉèÖÃÎªºÍÍøÂç½ÚµãÒ»Ñù´ó£¬µÚÈı¸ö²ÎÊıµÄÊµ¼ÊÒâÒå¾ÍÊÇ¸ĞÈ¾¹æÄ££¬Õâ¸öÄ£ĞÍÏÂÊÇÃ»ÓĞ¹Û²ìµãµÄ
+						mySi.simulate(network, true, ppt_of_I);// å…¨æ„ŸæŸ“
+						System.out.println("ä¼ æ’­æ¨¡å‹ä»¿çœŸå®Œæˆ......");
+						// mySi.JordanSimulate(network,true);//è¿™ä¸ªéœ€è¦æ³¨æ„:
+						// 1ã€getobv_byTimeçš„ç¬¬äºŒä¸ªå‚æ•°å¿…é¡»è¦è®¾ç½®ä¸ºå’Œç½‘ç»œèŠ‚ç‚¹ä¸€æ ·å¤§ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°çš„å®é™…æ„ä¹‰å°±æ˜¯æ„ŸæŸ“è§„æ¨¡ï¼Œè¿™ä¸ªæ¨¡å‹ä¸‹æ˜¯æ²¡æœ‰è§‚å¯Ÿç‚¹çš„
 						GFNL_time1=System.currentTimeMillis();
 
-						// ³éÈ¡Ç°30%µÄ±»¸ĞÈ¾¹Û²ìµã
-						//.1 fetch°´±ÈÀı³éÈ¡
+						// æŠ½å–å‰30%çš„è¢«æ„ŸæŸ“è§‚å¯Ÿç‚¹
+						//.1 fetchæŒ‰æ¯”ä¾‹æŠ½å–
 						//HashSet<String> obv_set = mySi.getobv_byTime(network, mySi.observer_num, setRate);
-						//.2 fetch°´ÊıÁ¿³éÈ¡
+						//.2 fetchæŒ‰æ•°é‡æŠ½å–
 						ArrayList<String> obv_set = mySi.getobv_byTime_byNum(network, mySi.observer_num, setNum);
 
 						//ALG.shortPath_removeEDGES=ALG.shortPath;
 						
-						//´óÍøÂçÏÂÖ»¼ÇÂ¼woking sensorµÄĞÅÏ¢
+						//å¤§ç½‘ç»œä¸‹åªè®°å½•woking sensorçš„ä¿¡æ¯
 //						ALG.shortPath_fourworkingsensor=mySi.readInf_4(network,obv_set);
-//						System.out.println("¾àÀë¾ØÕóÉú³ÉÍê³É......");
+//						System.out.println("è·ç¦»çŸ©é˜µç”Ÿæˆå®Œæˆ......");
 						if(ALG.isBigScaleNet) {
-							// 1. ÊÇ´óĞÍÍøÂçĞèÒª´ÓÎÄ¼şÖĞ¶ÁÈ¡------------´Ë´úÂë¶ÎÊÊÓÃÓÚÒ»°ã´óµÄÎÄ¼ş----´ÓÒ»¸öÎÄ¼şÖĞ¼´¿É¶Á³öĞÅÏ¢
+							// 1. æ˜¯å¤§å‹ç½‘ç»œéœ€è¦ä»æ–‡ä»¶ä¸­è¯»å–------------æ­¤ä»£ç æ®µé€‚ç”¨äºä¸€èˆ¬å¤§çš„æ–‡ä»¶----ä»ä¸€ä¸ªæ–‡ä»¶ä¸­å³å¯è¯»å‡ºä¿¡æ¯
 //							ALG.shortPath_fourworkingsensor=mySi.readInf_4_from_oneFile(network,obv_set,
 //									"G:\\Data Files\\shortestPath_github.txt");
-//							System.out.println("4sensor¶ÔÓ¦µÄ¾àÀë¾ØÕóÉú³ÉÍê³É......");
+//							System.out.println("4sensorå¯¹åº”çš„è·ç¦»çŸ©é˜µç”Ÿæˆå®Œæˆ......");
 							
-							// 2. ÊÇ´óĞÍÍøÂçĞèÒª´ÓÎÄ¼şÖĞ¶ÁÈ¡------------´Ë´úÂë¶ÎÊÊÓÃÓÚÌØ±ğ´óµÄÎÄ¼ş----´Ó¼¸Íò¸öÎÄ¼şÖĞÑ¡È¡
+							// 2. æ˜¯å¤§å‹ç½‘ç»œéœ€è¦ä»æ–‡ä»¶ä¸­è¯»å–------------æ­¤ä»£ç æ®µé€‚ç”¨äºç‰¹åˆ«å¤§çš„æ–‡ä»¶----ä»å‡ ä¸‡ä¸ªæ–‡ä»¶ä¸­é€‰å–
 							ALG.shortPath_fourworkingsensor=mySi.readInf_4(network, obv_set);
 							
-							// 3. ÒòÎªÖ»ÓĞ4¸öµã£¬Ö±½ÓÖ´ĞĞDFS¼ÇÂ¼ËÄ¸ösensorµÄoriginµÄÈ«²¿¾àÀëĞÅÏ¢
+							// 3. å› ä¸ºåªæœ‰4ä¸ªç‚¹ï¼Œç›´æ¥æ‰§è¡ŒDFSè®°å½•å››ä¸ªsensorçš„originçš„å…¨éƒ¨è·ç¦»ä¿¡æ¯
 							
 						}else {
-							//·Ç´óĞÍÍøÂçÖ±½ÓÔÚÄÚ´æÖĞÒÑ¾­ÓĞĞÅÏ¢ÁË
+							//éå¤§å‹ç½‘ç»œç›´æ¥åœ¨å†…å­˜ä¸­å·²ç»æœ‰ä¿¡æ¯äº†
 						}
 
 						// HashSet<String>
-						// obv_set=mySi.test(network);//Õâ¸öÊÇÂÛÎÄÖĞµÄ²âÊÔ£¬ÒªºÍÊı¾İ¼¯JordanCenterDemoÅäºÏÊ¹ÓÃ
-						System.out.print("±£ÁôÏÂÀ´µÄ¹Û²ìµã: ");
+						// obv_set=mySi.test(network);//è¿™ä¸ªæ˜¯è®ºæ–‡ä¸­çš„æµ‹è¯•ï¼Œè¦å’Œæ•°æ®é›†JordanCenterDemoé…åˆä½¿ç”¨
+						System.out.print("ä¿ç•™ä¸‹æ¥çš„è§‚å¯Ÿç‚¹: ");
 						for (String obv:  obv_set ) {
 							System.out.print(obv+": "+network.vertexArray[Integer.parseInt(obv)-1].time+"| "+"( "+network.vertexArray[Integer.parseInt(obv)-1].origin+" )");
 						}
-						//System.out.println("±£ÁôÏÂÀ´µÄ¹Û²ìµã: " + obv_set.toString());
+						//System.out.println("ä¿ç•™ä¸‹æ¥çš„è§‚å¯Ÿç‚¹: " + obv_set.toString());
 						System.out.println();
 
 						long startTime1 = System.currentTimeMillis();
@@ -162,20 +162,20 @@ public class MyExecute {
 
 
 					}
-					System.out.println("ÕıÈ·ÂÊ: " + f_score / MyExecute.time);
-					writer.write("×Ü¹Û²ìµã: ");
+					System.out.println("æ­£ç¡®ç‡: " + f_score / MyExecute.time);
+					writer.write("æ€»è§‚å¯Ÿç‚¹: ");
 					writer.write(obv_num + "");
-					writer.write(" Ñ¡ÔñÊıÁ¿: ");
+					writer.write(" é€‰æ‹©æ•°é‡: ");
 					writer.write(setNum + "");
 					writer.write(":  ");
 //					writer.write((correct_rate / MyExecute.time) + "");
-//					writer.write(" Æ½¾ù´íÎó¾àÀë: ");
+//					writer.write(" å¹³å‡é”™è¯¯è·ç¦»: ");
 //					writer.write((error_length / MyExecute.time) + "");
 //					writer.write("\r\n");
 					writer.write(" F_score: ");
 					writer.write((f_score / MyExecute.time) + "");
 					writer.write("\r\n");
-					writer.write(" ·ÂÕæÒ»´Î³ÌĞòËùÓÃÊ±¼ä: ");
+					writer.write(" ä»¿çœŸä¸€æ¬¡ç¨‹åºæ‰€ç”¨æ—¶é—´: ");
 					writer.write((total_time / MyExecute.time) +" (ms)");
 					writer.write("\r\n");
 					

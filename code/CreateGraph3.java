@@ -1,4 +1,4 @@
-package github_GFNL_0411_sensorStraChange_bigScale;
+package github_Anonymous_GRSL;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -16,7 +16,7 @@ public class CreateGraph3 {
 
 
 	static{
-		//ÍØÆË½á¹¹µÄ±ßÊıÁ¿ºÍ½ÚµãÊıÁ¿
+		//æ‹“æ‰‘ç»“æ„çš„è¾¹æ•°é‡å’ŒèŠ‚ç‚¹æ•°é‡
 		vernum=37700;//37700;//317080;//21;//22470;//4648;//62;//115;//198;//18;//198;//7066;//4648;//4039;
 		edgenum=289003;//289003;//1049866;//31;//170823;//159;//613;//2742;//22;//2742;//103663;//59382;//88234;
 
@@ -28,7 +28,7 @@ public class CreateGraph3 {
 		}
 
 		try {
-			//ÍøÂçÍØÆË½á¹¹ÎÄ¼şÂ·¾¶
+			//ç½‘ç»œæ‹“æ‰‘ç»“æ„æ–‡ä»¶è·¯å¾„
 			String path="G:\\eclipse workspace\\1\\ComplexNetwork\\src\\epaAlgorithm\\large_facebook.txt";
 //			String path="G:\\eclipse workspace\\1\\ComplexNetwork\\src\\epaAlgorithm\\viki_adjG_continue_no_same.txt";
 			//String path = "G:\\Data Files\\Index1_com-dblp.ungraph_continue_no_same.txt";
@@ -38,7 +38,7 @@ public class CreateGraph3 {
 			String line = null;
 			int line_index = 0;
 			while ((line = bufferedReader.readLine()) != null) {
-				//¶ÁÁËÒ»ĞĞ£¬ºó±ß¶ÔĞĞµÄ²Ù×÷¾ÍĞèÒªÎÒÃÇ×Ô¼º¸ãÁË£¬Òª¸ù¾İĞĞµÄ¸ñÊ½µ÷ÕûÏÂ±ß´úÂë
+				//è¯»äº†ä¸€è¡Œï¼Œåè¾¹å¯¹è¡Œçš„æ“ä½œå°±éœ€è¦æˆ‘ä»¬è‡ªå·±æäº†ï¼Œè¦æ ¹æ®è¡Œçš„æ ¼å¼è°ƒæ•´ä¸‹è¾¹ä»£ç 
 				String[] cut = line.split(" ");
 				int edge1 = Integer.parseInt(cut[0]);
 				int edge2 = Integer.parseInt(cut[1]);
@@ -49,19 +49,19 @@ public class CreateGraph3 {
 				line_index++;
 			}
 			fileInputStream.close();
-			System.out.println("Ò»¹²¶ÁÁË"+line_index+"ĞĞ");
+			System.out.println("ä¸€å…±è¯»äº†"+line_index+"è¡Œ");
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("ÎÄ¼ş²Ù×÷Òì³£");
+			System.out.println("æ–‡ä»¶æ“ä½œå¼‚å¸¸");
 		}
 
 	}
 
 	/**
-	 * ¸ù¾İÓÃ»§ÊäÈëµÄstringÀàĞÍµÄ¶¥µã·µ»Ø¸Ã¶¥µã
-	 * @param graph Í¼
-	 * @param str ÊäÈëÊı¾İ
-	 * @return·µ»ØÒ»¸ö¶¥µã
+	 * æ ¹æ®ç”¨æˆ·è¾“å…¥çš„stringç±»å‹çš„é¡¶ç‚¹è¿”å›è¯¥é¡¶ç‚¹
+	 * @param graph å›¾
+	 * @param str è¾“å…¥æ•°æ®
+	 * @returnè¿”å›ä¸€ä¸ªé¡¶ç‚¹
 	 */
 	public static Vertex1 getVertex(Graph1 graph,String str){
 		for(int i=0;i<graph.verNum;i++){
@@ -73,19 +73,19 @@ public class CreateGraph3 {
 	}
 
 	/**
-	 * ¸ù¾İÓÃ»§ÊäÈëµÄÊı¾İ³õÊ¼»¯Ò»¸öÍ¼£¬ÒÔÁÚ½Ó±íµÄĞÎÊ½¹¹½¨!
-	 * @param graph Éú³ÉµÄÍ¼
+	 * æ ¹æ®ç”¨æˆ·è¾“å…¥çš„æ•°æ®åˆå§‹åŒ–ä¸€ä¸ªå›¾ï¼Œä»¥é‚»æ¥è¡¨çš„å½¢å¼æ„å»º!
+	 * @param graph ç”Ÿæˆçš„å›¾
 	 */
 	public static void initialGraph(Graph1 graph){
 		@SuppressWarnings("resource")
 		Scanner scan=new Scanner(System.in);
-		//System.out.println("ÇëÊäÈëÍøÂçµÄÈËÊıºÍ±ßÊı£º34 78");
+		//System.out.println("è¯·è¾“å…¥ç½‘ç»œçš„äººæ•°å’Œè¾¹æ•°ï¼š34 78");
 		//graph.verNum=scan.nextInt();
 		//graph.edgeNum=scan.nextInt();
 		graph.verNum=vernum;
 		graph.edgeNum=edgenum;
 
-		//System.out.println("ÇëÒÀ´ÎÊäÈëµãµÄÃû³Æ£º");
+		//System.out.println("è¯·ä¾æ¬¡è¾“å…¥ç‚¹çš„åç§°ï¼š");
 		for(int i=0;i<graph.verNum;i++){
 			Vertex1 vertex=new Vertex1();
 			//String name=scan.next();
@@ -98,18 +98,18 @@ public class CreateGraph3 {
 			graph.vertexArray[i]=vertex;
 		}
 
-		//System.out.println("ÇëÒÀ´ÎÊäÈëÃ¿Ìõ±ßµÄÁ½¸ö¶¥µã£º");
+		//System.out.println("è¯·ä¾æ¬¡è¾“å…¥æ¯æ¡è¾¹çš„ä¸¤ä¸ªé¡¶ç‚¹ï¼š");
 		for(int i=0;i<graph.edgeNum;i++){
 			//String preV=scan.next();
 			//String folV=scan.next();
 
-			//Vertex1 v1=getVertex(graph,preV);//ÕâÀïÄÃµ½µÄÊÇnetwork¶ÔÓ¦µÄÁÚ½Ó±íµÄµã¶ÔÏó£¬¼´µÚÒ»ÁĞ
+			//Vertex1 v1=getVertex(graph,preV);//è¿™é‡Œæ‹¿åˆ°çš„æ˜¯networkå¯¹åº”çš„é‚»æ¥è¡¨çš„ç‚¹å¯¹è±¡ï¼Œå³ç¬¬ä¸€åˆ—
 			//System.out.println("all_edges[i][0]-1 : "+(all_edges[i][0]-1));
 			Vertex1 v1=graph.vertexArray[all_edges[i][0]-1];
 			if(v1==null)
-				System.out.println("ÊäÈë±ß´æÔÚÍ¼ÖĞÃ»ÓĞµÄ¶¥µã£¡");
+				System.out.println("è¾“å…¥è¾¹å­˜åœ¨å›¾ä¸­æ²¡æœ‰çš„é¡¶ç‚¹ï¼");
 
-//ÏÂÃæ´úÂëÊÇÍ¼¹¹½¨µÄºËĞÄ£ºÁ´±í²Ù×÷
+//ä¸‹é¢ä»£ç æ˜¯å›¾æ„å»ºçš„æ ¸å¿ƒï¼šé“¾è¡¨æ“ä½œ
 			Vertex1 v2=new Vertex1();
 			v2.verName=all_edges[i][1]+"";
 			v2.nextNode=v1.nextNode;
@@ -118,10 +118,10 @@ public class CreateGraph3 {
 			v1.nextNode=v2;
 			v1.degree++;
 
-//½ô½Ó×ÅÏÂÃæ×¢ÊÍµÄ´úÂë¼ÓÉÏ±ãÊÇ¹¹½¨ÎŞÏòÍ¼µÄ£¬²»¼ÓÔòÊÇ¹¹½¨ÓĞÏòÍ¼µÄ£¡
+//ç´§æ¥ç€ä¸‹é¢æ³¨é‡Šçš„ä»£ç åŠ ä¸Šä¾¿æ˜¯æ„å»ºæ— å‘å›¾çš„ï¼Œä¸åŠ åˆ™æ˜¯æ„å»ºæœ‰å‘å›¾çš„ï¼
 			Vertex1 reV2=graph.vertexArray[all_edges[i][1]-1];
 			if(reV2==null)
-				System.out.println("ÊäÈë±ß´æÔÚÍ¼ÖĞÃ»ÓĞµÄ¶¥µã£¡");
+				System.out.println("è¾“å…¥è¾¹å­˜åœ¨å›¾ä¸­æ²¡æœ‰çš„é¡¶ç‚¹ï¼");
 			Vertex1 reV1=new Vertex1();
 			reV1.verName=all_edges[i][0]+"";
 			reV1.time=-1;
@@ -133,8 +133,8 @@ public class CreateGraph3 {
 	}
 
 	/**
-	 * Çó´ıÇóÍøÂçµÄÆ½¾ù¶È
-	 * @param network ´ıÇóÍøÂç
+	 * æ±‚å¾…æ±‚ç½‘ç»œçš„å¹³å‡åº¦
+	 * @param network å¾…æ±‚ç½‘ç»œ
 	 * @return
 	 */
 	public static double get_AVG_degree(Graph1 network) {
@@ -148,8 +148,8 @@ public class CreateGraph3 {
 	}
 	
 	/**
-	 * Çó´ıÇóÍøÂçµÄÖ±¾¶
-	 * @param network ´ıÇóÍøÂç
+	 * æ±‚å¾…æ±‚ç½‘ç»œçš„ç›´å¾„
+	 * @param network å¾…æ±‚ç½‘ç»œ
 	 * @return
 	 */
 	public static int get_diameter(Graph1 network, int[][] shortest_Path) {
@@ -165,11 +165,11 @@ public class CreateGraph3 {
 	}
 
 	/**
-	 * ÊäÈëÍ¼µÄÁÚ½Ó±í
-	 * @param graph ´ıÊä³öµÄÍ¼
+	 * è¾“å…¥å›¾çš„é‚»æ¥è¡¨
+	 * @param graph å¾…è¾“å‡ºçš„å›¾
 	 */
 	public static void outputGraph(Graph1 graph){
-		System.out.println("Êä³öÍøÂçµÄÁÚ½Ó±íÎª£º");
+		System.out.println("è¾“å‡ºç½‘ç»œçš„é‚»æ¥è¡¨ä¸ºï¼š");
 		for(int i=0;i<graph.verNum;i++){
 			Vertex1 vertex=graph.vertexArray[i];
 			System.out.print(vertex.verName);
@@ -199,10 +199,10 @@ public class CreateGraph3 {
 			vertex.time=-1;
 			vertex.infe=false;
 			tree.vertexArray[i]=vertex;
-		}//´´½¨Éú³ÉÊ÷£¬ÕâÀïÖ»¸³ÓèÁË½ÚµãĞÅÏ¢
+		}//åˆ›å»ºç”Ÿæˆæ ‘ï¼Œè¿™é‡Œåªèµ‹äºˆäº†èŠ‚ç‚¹ä¿¡æ¯
 
 		//Vertex1 vertex1=getVertex(graph, source);
-		//vertex1.time=0;//½«Í¼ÖĞµÄÔ´±ê¼ÇÎªÒÑ±éÀú×´Ì¬
+		//vertex1.time=0;//å°†å›¾ä¸­çš„æºæ ‡è®°ä¸ºå·²éå†çŠ¶æ€
 
 		ConcurrentLinkedQueue<String> Queue=new ConcurrentLinkedQueue<String>();
 		HashSet<String> travelled_node=new HashSet<>();
@@ -213,11 +213,11 @@ public class CreateGraph3 {
 			Vertex1 centerNode=getVertex(graph,centerNodeName);
 			Vertex1 neighborVertex=centerNode.nextNode;
 			while(neighborVertex!=null){
-				if(!travelled_node.contains(neighborVertex.verName)){//ÁÚ¾Ó½ÚµãÒ»µ©´æÔÚ£¬ÄÇÃ´²»ÓÃËµ£¬100%ÒÑ¾­ÓĞÁ¬Í¨Â·¾¶£¬¾Í²»ÓÃ¹ÜÁË
+				if(!travelled_node.contains(neighborVertex.verName)){//é‚»å±…èŠ‚ç‚¹ä¸€æ—¦å­˜åœ¨ï¼Œé‚£ä¹ˆä¸ç”¨è¯´ï¼Œ100%å·²ç»æœ‰è¿é€šè·¯å¾„ï¼Œå°±ä¸ç”¨ç®¡äº†
 					travelled_node.add(neighborVertex.verName);
 					Queue.add(neighborVertex.verName);
 
-					//½ô½Ó×ÅÊÇÔÚtreeÉÏÊÇ¹¹½¨ÎŞÏòÍ¼
+					//ç´§æ¥ç€æ˜¯åœ¨treeä¸Šæ˜¯æ„å»ºæ— å‘å›¾
 					Vertex1 neighborNode=getVertex(graph,neighborVertex.verName);
 
 					Vertex1 v1=getVertex(tree,centerNode.verName);
@@ -237,7 +237,7 @@ public class CreateGraph3 {
 					v1.state=centerNode.state;
 					v1.time=centerNode.time;
 
-					//ÎŞÏòÍ¼µÄ·´Ïò¹¹½¨
+					//æ— å‘å›¾çš„åå‘æ„å»º
 					Vertex1 reNeighbor=getVertex(tree,neighborNode.verName);
 					Vertex1 reCenter=new Vertex1();
 					reCenter.verName=centerNode.verName;
